@@ -2,7 +2,7 @@
 
 namespace ZnLib\Components\ReadOnly\Helpers;
 
-use ZnLib\Components\ReadOnly\Exceptions\ReadOnlyException;
+use ZnCore\Contract\Common\Exceptions\ReadOnlyException;
 
 class ReadOnlyHelper
 {
