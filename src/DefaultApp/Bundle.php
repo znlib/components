@@ -1,6 +1,6 @@
 <?php
 
-namespace ZnLib\Components\DefaultContainer;
+namespace ZnLib\Components\DefaultApp;
 
 use ZnCore\Base\Bundle\Base\BaseBundle;
 
