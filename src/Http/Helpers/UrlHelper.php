@@ -3,7 +3,7 @@
 namespace ZnLib\Components\Http\Helpers;
 
 use ZnCore\Base\Arr\Helpers\ArrayHelper;
-use ZnLib\Web\Components\Url\Helpers\Url;
+use ZnLib\Web\Url\Helpers\Url;
 use function GuzzleHttp\Psr7\parse_query;
 
 class UrlHelper
