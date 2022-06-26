@@ -3,11 +3,29 @@
 namespace ZnLib\Components\Http\Helpers;
 
 use ZnCore\Base\Arr\Helpers\ArrayHelper;
-use ZnLib\Web\Url\Helpers\Url;
+use ZnLib\Web\Html\Helpers\Url;
 use function GuzzleHttp\Psr7\parse_query;
 
 class UrlHelper
 {
+
+    public static function requestUri(): string
+    {
+        global $_SERVER;
+        $baseUrl = explode('?', $_SERVER['REQUEST_URI'])[0];
+        return $baseUrl;
+    }
+
+    /**
+     * Returns a value indicating whether a URL is relative.
+     * A relative URL does not have host info part.
+     * @param string $url the URL to be checked
+     * @return bool whether the URL is relative
+     */
+    protected static function isRelative($url): bool
+    {
+        return strncmp($url, '//', 2) && strpos($url, '://') === false;
+    }
 
     public static function generateUrlFromParams(array $data): string {
 
