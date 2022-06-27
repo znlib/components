@@ -12,7 +12,6 @@ class StoreFile
 
     public function __construct($file, $driver = null)
     {
-        //parent::__construct();
         $driver = $driver ?: FilePathHelper::fileExt($file);
         $this->store = new Store($driver);
         $this->file = $file;
