@@ -6,6 +6,8 @@ use ZnCore\Contract\Common\Exceptions\NotImplementedMethodException;
 use ZnCore\Base\Arr\Traits\ArrayCrudRepositoryTrait;
 use ZnCore\Base\DotEnv\Domain\Libs\DotEnv;
 use ZnCore\Base\FileSystem\Helpers\FilePathHelper;
+use ZnCore\Domain\Domain\Traits\FindAllTrait;
+use ZnCore\Domain\Domain\Traits\FindOneTrait;
 use ZnCore\Domain\Query\Entities\Query;
 use ZnLib\Components\Store\StoreFile;
 use ZnCore\Domain\Repository\Interfaces\CrudRepositoryInterface;
@@ -15,10 +17,11 @@ abstract class BaseFileCrudRepository extends BaseFileRepository implements Crud
 
     use ArrayCrudRepositoryTrait;
 
-    public function tableName(): string
+
+    /*public function tableName(): string
     {
         throw new NotImplementedMethodException('Not Implemented Method "tableName"');
-    }
+    }*/
 
     public function directory(): string
     {
@@ -29,11 +32,6 @@ abstract class BaseFileCrudRepository extends BaseFileRepository implements Crud
     {
         return 'php';
     }
-
-    /*public function _relations()
-    {
-        return [];
-    }*/
 
     protected function forgeQuery(Query $query = null)
     {

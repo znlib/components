@@ -20,10 +20,10 @@ abstract class BaseFileRepository implements RepositoryInterface
         $this->setEntityManager($em);
     }
 
-    public function tableName(): string
+    /*public function tableName(): string
     {
         throw new NotImplementedMethodException('Not Implemented Method "tableName"');
-    }
+    }*/
 
     public function directory(): string
     {
