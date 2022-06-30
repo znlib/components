@@ -9,7 +9,7 @@ trait SoftDeleteTrait
 
     public function deleteById($id)
     {
-        $entity = $this->oneById($id);
+        $entity = $this->findOneById($id);
         $entity->delete();
         $this->getRepository()->update($entity);
         return true;
