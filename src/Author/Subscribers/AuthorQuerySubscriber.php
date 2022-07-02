@@ -3,7 +3,7 @@
 namespace ZnLib\Components\Author\Subscribers;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use ZnBundle\User\Domain\Interfaces\Services\AuthServiceInterface;
+use ZnUser\Authentication\Domain\Interfaces\Services\AuthServiceInterface;
 use ZnCore\Domain\Domain\Enums\EventEnum;
 use ZnCore\Domain\Domain\Events\QueryEvent;
 use ZnCore\Domain\EntityManager\Interfaces\EntityManagerInterface;
