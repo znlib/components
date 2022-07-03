@@ -44,7 +44,7 @@ class ChainEncoder implements EncoderInterface
 
     public function encode($data)
     {
-        $encoders = $this->encoderCollection->all();
+        $encoders = $this->encoderCollection->toArray();
         foreach ($encoders as $encoderClass) {
             $encoderInstance = $this->getEncoderInstance($encoderClass);
             $data = $encoderInstance->encode($data);
@@ -54,7 +54,7 @@ class ChainEncoder implements EncoderInterface
 
     public function decode($data)
     {
-        $encoders = $this->encoderCollection->all();
+        $encoders = $this->encoderCollection->toArray();
         $encoders = array_reverse($encoders);
         foreach ($encoders as $encoderClass) {
             $encoderInstance = $this->getEncoderInstance($encoderClass);
