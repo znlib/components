@@ -2,7 +2,7 @@
 
 namespace ZnLib\Components\Format\Encoders;
 
-use Illuminate\Support\Collection;
+use ZnCore\Domain\Collection\Libs\Collection;
 use ZnCore\Contract\Encoder\Interfaces\EncoderInterface;
 use ZnCore\Base\Instance\Helpers\InstanceHelper;
 
