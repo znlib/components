@@ -12,15 +12,15 @@ use ZnLib\Components\Time\Enums\TimeEnum;
 return [
     'singletons' => [
         AdapterInterface::class => function (ContainerInterface $container) {
-            if (EnvHelper::isTest() || EnvHelper::isDev()) {
-                $adapter = new ArrayAdapter();
-            } else {
+            $isEnableCache = EnvHelper::isProd();
+            if ($isEnableCache) {
                 $cacheDirectory = __DIR__ . '/../../../../../../' . DotEnv::get('CACHE_DIRECTORY');
                 $adapter = new FilesystemAdapter('app', TimeEnum::SECOND_PER_DAY, $cacheDirectory);
                 $adapter->setLogger($container->get(LoggerInterface::class));
+            } else {
+                $adapter = new ArrayAdapter();
             }
             return $adapter;
         },
-
     ],
 ];
