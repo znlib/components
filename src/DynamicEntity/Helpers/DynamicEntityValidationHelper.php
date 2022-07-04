@@ -14,7 +14,7 @@ class DynamicEntityValidationHelper
 {
 
     /**
-     * @return array | Collection | ValidationErrorEntity[]
+     * @return array | \ZnCore\Domain\Collection\Interfaces\Enumerable | ValidationErrorEntity[]
      */
     public static function validate(ValidateDynamicEntityInterface $data): Collection
     {
@@ -43,7 +43,7 @@ class DynamicEntityValidationHelper
 
     /**
      * @param array | ConstraintViolationList[] $violations
-     * @return  array | Collection | ValidationErrorEntity[]
+     * @return  array | \ZnCore\Domain\Collection\Interfaces\Enumerable | ValidationErrorEntity[]
      */
     private static function prepareUnprocessible(array $violations): Collection
     {

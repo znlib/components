@@ -18,7 +18,7 @@ trait I18nTrait
     protected $_languageService;
     protected $_runtimeLanguageService;
 
-    /** @var Collection | LanguageEntity[] */
+    /** @var \ZnCore\Domain\Collection\Interfaces\Enumerable | LanguageEntity[] */
     static protected $_languages = null;
 
     protected function _forgeLanguages(LanguageServiceInterface $languageService = null)
