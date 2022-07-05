@@ -2,6 +2,7 @@
 
 namespace ZnLib\Components\Format\Encoders;
 
+use ZnCore\Domain\Collection\Interfaces\Enumerable;
 use ZnCore\Domain\Collection\Libs\Collection;
 use ZnCore\Contract\Encoder\Interfaces\EncoderInterface;
 use ZnCore\Base\Instance\Helpers\InstanceHelper;
@@ -37,7 +38,7 @@ class ChainEncoder implements EncoderInterface
      * Получить коллекцию кодеров
      * @return Collection|EncoderInterface[] Коллекция кодеров
      */
-    public function getEncoders(): Collection
+    public function getEncoders(): Enumerable
     {
         return $this->encoderCollection;
     }

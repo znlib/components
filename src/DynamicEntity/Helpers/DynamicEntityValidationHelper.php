@@ -2,6 +2,7 @@
 
 namespace ZnLib\Components\DynamicEntity\Helpers;
 
+use ZnCore\Domain\Collection\Interfaces\Enumerable;
 use ZnCore\Domain\Collection\Libs\Collection;
 use Symfony\Component\PropertyAccess\Exception\UninitializedPropertyException;
 use ZnCore\Domain\Entity\Factories\PropertyAccess;
@@ -14,9 +15,9 @@ class DynamicEntityValidationHelper
 {
 
     /**
-     * @return array | \ZnCore\Domain\Collection\Interfaces\Enumerable | ValidationErrorEntity[]
+     * @return array | Enumerable | ValidationErrorEntity[]
      */
-    public static function validate(ValidateDynamicEntityInterface $data): Collection
+    public static function validate(ValidateDynamicEntityInterface $data): Enumerable
     {
         $rules = $data->validationRules();
         return self::validateByRulesArray($data, $rules);
@@ -43,9 +44,9 @@ class DynamicEntityValidationHelper
 
     /**
      * @param array | ConstraintViolationList[] $violations
-     * @return  array | \ZnCore\Domain\Collection\Interfaces\Enumerable | ValidationErrorEntity[]
+     * @return  array | Enumerable | ValidationErrorEntity[]
      */
-    private static function prepareUnprocessible(array $violations): Collection
+    private static function prepareUnprocessible(array $violations): Enumerable
     {
         $collection = new Collection;
         foreach ($violations as $name => $violationList) {
