@@ -27,16 +27,16 @@ class ChainEncoder implements EncoderInterface
 
     /**
      * ChainEncoder constructor.
-     * @param Collection|EncoderInterface[] $encoderCollection Коллекция кодеров
+     * @param Enumerable|EncoderInterface[] $encoderCollection Коллекция кодеров
      */
-    public function __construct(Collection $encoderCollection)
+    public function __construct(Enumerable $encoderCollection)
     {
         $this->encoderCollection = $encoderCollection;
     }
 
     /**
      * Получить коллекцию кодеров
-     * @return Collection|EncoderInterface[] Коллекция кодеров
+     * @return Enumerable|EncoderInterface[] Коллекция кодеров
      */
     public function getEncoders(): Enumerable
     {
