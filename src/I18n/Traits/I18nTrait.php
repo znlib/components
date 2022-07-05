@@ -2,14 +2,13 @@
 
 namespace ZnLib\Components\I18n\Traits;
 
-use ZnCore\Domain\Collection\Libs\Collection;
 use ZnBundle\Language\Domain\Entities\LanguageEntity;
 use ZnBundle\Language\Domain\Interfaces\Services\LanguageServiceInterface;
 use ZnBundle\Language\Domain\Interfaces\Services\RuntimeLanguageServiceInterface;
 use ZnCore\Base\Arr\Helpers\ArrayHelper;
 use ZnCore\Base\Container\Helpers\ContainerHelper;
-use ZnLib\Components\I18n\Enums\LanguageI18nEnum;
 use ZnCore\Domain\Entity\Helpers\EntityHelper;
+use ZnLib\Components\I18n\Enums\LanguageI18nEnum;
 
 trait I18nTrait
 {
@@ -32,7 +31,7 @@ trait I18nTrait
 
     protected function _forgeLanguageService(LanguageServiceInterface $languageService = null): LanguageServiceInterface
     {
-        if(!$this->_languageService) {
+        if (!$this->_languageService) {
             if (!$languageService) {
                 $languageService = ContainerHelper::getContainer()->get(LanguageServiceInterface::class);
             }
@@ -43,7 +42,7 @@ trait I18nTrait
 
     protected function _forgeRuntimeLanguageService(RuntimeLanguageServiceInterface $languageService = null): RuntimeLanguageServiceInterface
     {
-        if(!$this->_runtimeLanguageService) {
+        if (!$this->_runtimeLanguageService) {
             if (!$languageService) {
                 $languageService = ContainerHelper::getContainer()->get(RuntimeLanguageServiceInterface::class);
             }
@@ -65,7 +64,7 @@ trait I18nTrait
 
     protected function _getCurrentLanguage(string $defaultLanguage = null): string
     {
-        if($defaultLanguage) {
+        if ($defaultLanguage) {
             $language = $defaultLanguage;
         } else {
             $this->_setRuntimeLanguageService();

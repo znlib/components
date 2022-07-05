@@ -2,16 +2,15 @@
 
 namespace ZnLib\Components\Format\Encoders;
 
-use ZnCore\Domain\Collection\Interfaces\Enumerable;
-use ZnCore\Domain\Collection\Libs\Collection;
-use ZnCore\Contract\Encoder\Interfaces\EncoderInterface;
 use ZnCore\Base\Instance\Helpers\InstanceHelper;
+use ZnCore\Contract\Encoder\Interfaces\EncoderInterface;
+use ZnCore\Domain\Collection\Interfaces\Enumerable;
 
 /**
  * Агрегатный кодер
- * 
+ *
  * Содержит в себе инстансы других кодеров.
- * 
+ *
  * При кодировании/декодировании вызывает соответствующие методы вложенных кодеров.
  * Агрегатный кодер пригодится, когда необходимо реализовать "матрешку" из форматов, например - .tar.gz
  *
@@ -21,7 +20,7 @@ class ChainEncoder implements EncoderInterface
 {
 
     /**
-     * @var Collection|EncoderInterface[] Коллекция кодеров
+     * @var Enumerable|EncoderInterface[] Коллекция кодеров
      */
     private $encoderCollection;
 
