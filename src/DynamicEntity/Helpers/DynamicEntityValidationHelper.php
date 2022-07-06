@@ -47,7 +47,7 @@ class DynamicEntityValidationHelper
      */
     private static function prepareUnprocessible(array $violations): Enumerable
     {
-        $collection = new Collection;
+        $collection = new Collection();
         foreach ($violations as $name => $violationList) {
             foreach ($violationList as $violation) {
                 //$name = $violation->propertyPath();
