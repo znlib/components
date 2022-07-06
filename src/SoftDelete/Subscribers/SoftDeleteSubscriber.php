@@ -5,10 +5,10 @@ namespace ZnLib\Components\SoftDelete\Subscribers;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use ZnLib\Components\Status\Enums\StatusEnum;
 use ZnCore\Query\Entities\Where;
-use ZnCore\Domain\Domain\Enums\EventEnum;
+use ZnCore\Domain\Enums\EventEnum;
 use ZnCore\Query\Enums\OperatorEnum;
-use ZnCore\Domain\Domain\Events\EntityEvent;
-use ZnCore\Domain\Domain\Events\QueryEvent;
+use ZnCore\Domain\Events\EntityEvent;
+use ZnCore\Domain\Events\QueryEvent;
 use ZnCore\EntityManager\Interfaces\EntityManagerInterface;
 use ZnCore\EntityManager\Traits\EntityManagerAwareTrait;
 

@@ -5,7 +5,7 @@ namespace ZnLib\Components\ArrayRepository\Traits;
 use ZnCore\Collection\Interfaces\Enumerable;
 use ZnCore\Arr\Helpers\FilterHelper;
 use ZnCore\Contract\Common\Exceptions\InvalidMethodParameterException;
-use ZnCore\Domain\Domain\Traits\DispatchEventTrait;
+use ZnCore\Domain\Traits\DispatchEventTrait;
 use ZnCore\Entity\Exceptions\NotFoundException;
 use ZnCore\Entity\Helpers\EntityHelper;
 use ZnCore\Entity\Interfaces\EntityIdInterface;

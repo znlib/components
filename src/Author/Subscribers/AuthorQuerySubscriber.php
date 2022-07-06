@@ -4,8 +4,8 @@ namespace ZnLib\Components\Author\Subscribers;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use ZnUser\Authentication\Domain\Interfaces\Services\AuthServiceInterface;
-use ZnCore\Domain\Domain\Enums\EventEnum;
-use ZnCore\Domain\Domain\Events\QueryEvent;
+use ZnCore\Domain\Enums\EventEnum;
+use ZnCore\Domain\Events\QueryEvent;
 use ZnCore\EntityManager\Interfaces\EntityManagerInterface;
 use ZnCore\EntityManager\Traits\EntityManagerAwareTrait;
 
