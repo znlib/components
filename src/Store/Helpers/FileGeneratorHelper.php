@@ -3,7 +3,7 @@
 namespace ZnLib\Components\Store\Helpers;
 
 use Yii;
-use ZnCore\Base\Arr\Helpers\ArrayHelper;
+use ZnCore\Arr\Helpers\ArrayHelper;
 use ZnCore\FileSystem\Helpers\FileStorageHelper;
 
 class FileGeneratorHelper

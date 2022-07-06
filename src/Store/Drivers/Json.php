@@ -2,7 +2,7 @@
 
 namespace ZnLib\Components\Store\Drivers;
 
-use ZnCore\Base\Arr\Helpers\ArrayHelper;
+use ZnCore\Arr\Helpers\ArrayHelper;
 
 class Json implements DriverInterface
 {

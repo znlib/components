@@ -3,15 +3,15 @@
 namespace ZnLib\Components\ArrayRepository\Traits;
 
 use ZnCore\Collection\Interfaces\Enumerable;
-use ZnCore\Base\Arr\Helpers\FilterHelper;
+use ZnCore\Arr\Helpers\FilterHelper;
 use ZnCore\Contract\Common\Exceptions\InvalidMethodParameterException;
 use ZnCore\Domain\Domain\Traits\DispatchEventTrait;
 use ZnCore\Entity\Exceptions\NotFoundException;
 use ZnCore\Entity\Helpers\EntityHelper;
 use ZnCore\Entity\Interfaces\EntityIdInterface;
-use ZnCore\Domain\Query\Entities\Query;
-use ZnCore\Domain\Repository\Traits\CrudRepositoryFindAllTrait;
-use ZnCore\Domain\Repository\Traits\CrudRepositoryFindOneTrait;
+use ZnCore\Query\Entities\Query;
+use ZnCore\Repository\Traits\CrudRepositoryFindAllTrait;
+use ZnCore\Repository\Traits\CrudRepositoryFindOneTrait;
 
 trait ArrayCrudRepositoryTrait
 {

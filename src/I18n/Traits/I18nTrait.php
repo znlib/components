@@ -5,7 +5,7 @@ namespace ZnLib\Components\I18n\Traits;
 use ZnBundle\Language\Domain\Entities\LanguageEntity;
 use ZnBundle\Language\Domain\Interfaces\Services\LanguageServiceInterface;
 use ZnBundle\Language\Domain\Interfaces\Services\RuntimeLanguageServiceInterface;
-use ZnCore\Base\Arr\Helpers\ArrayHelper;
+use ZnCore\Arr\Helpers\ArrayHelper;
 use ZnCore\Container\Helpers\ContainerHelper;
 use ZnCore\Entity\Helpers\EntityHelper;
 use ZnLib\Components\I18n\Enums\LanguageI18nEnum;

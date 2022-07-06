@@ -6,7 +6,7 @@ use Symfony\Component\Cache\Adapter\AdapterInterface;
 use Symfony\Component\Cache\Adapter\ArrayAdapter;
 use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 use ZnCore\DotEnv\Domain\Libs\DotEnv;
-use ZnCore\Base\Env\Helpers\EnvHelper;
+use ZnCore\Env\Helpers\EnvHelper;
 use ZnLib\Components\Time\Enums\TimeEnum;
 
 return [

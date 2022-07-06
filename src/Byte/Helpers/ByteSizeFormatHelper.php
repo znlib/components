@@ -3,7 +3,7 @@
 namespace ZnLib\Components\Byte\Helpers;
 
 use ZnLib\Components\Byte\Enums\ByteEnum;
-use ZnCore\Base\Enum\Helpers\EnumHelper;
+use ZnCore\Enum\Helpers\EnumHelper;
 
 class ByteSizeFormatHelper
 {

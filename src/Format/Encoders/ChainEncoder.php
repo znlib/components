@@ -2,7 +2,7 @@
 
 namespace ZnLib\Components\Format\Encoders;
 
-use ZnCore\Base\Instance\Helpers\InstanceHelper;
+use ZnCore\Instance\Helpers\InstanceHelper;
 use ZnCore\Contract\Encoder\Interfaces\EncoderInterface;
 use ZnCore\Collection\Interfaces\Enumerable;
 

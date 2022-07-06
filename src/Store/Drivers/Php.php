@@ -3,7 +3,7 @@
 namespace ZnLib\Components\Store\Drivers;
 
 use Symfony\Component\VarExporter\VarExporter;
-use ZnCore\Base\Arr\Helpers\ArrayHelper;
+use ZnCore\Arr\Helpers\ArrayHelper;
 use ZnCore\FileSystem\Helpers\FileStorageHelper;
 use ZnLib\Components\Store\Helpers\FileGeneratorHelper;
 

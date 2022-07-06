@@ -5,8 +5,8 @@ namespace ZnLib\Components\Store\Base;
 use ZnLib\Components\ArrayRepository\Traits\ArrayCrudRepositoryTrait;
 use ZnCore\DotEnv\Domain\Libs\DotEnv;
 use ZnCore\FileSystem\Helpers\FilePathHelper;
-use ZnCore\Domain\Query\Entities\Query;
-use ZnCore\Domain\Repository\Interfaces\CrudRepositoryInterface;
+use ZnCore\Query\Entities\Query;
+use ZnCore\Repository\Interfaces\CrudRepositoryInterface;
 use ZnLib\Components\Store\StoreFile;
 
 abstract class BaseFileCrudRepository extends BaseFileRepository implements CrudRepositoryInterface

@@ -2,8 +2,8 @@
 
 namespace ZnLib\Components\I18Next\Services;
 
-use ZnCore\Base\Instance\Helpers\ClassHelper;
-use ZnCore\Base\Instance\Helpers\InstanceHelper;
+use ZnCore\Instance\Helpers\ClassHelper;
+use ZnCore\Instance\Helpers\InstanceHelper;
 use ZnLib\Components\I18Next\Exceptions\NotFoundBundleException;
 use ZnLib\Components\I18Next\Interfaces\Services\TranslationServiceInterface;
 use ZnLib\Components\I18Next\Interfaces\TranslationLoaders\TranslationLoaderInterface;

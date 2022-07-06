@@ -2,7 +2,7 @@
 
 namespace ZnLib\Components\Http\Helpers;
 
-use ZnCore\Base\Arr\Helpers\ArrayHelper;
+use ZnCore\Arr\Helpers\ArrayHelper;
 use ZnLib\Web\Html\Helpers\Url;
 use function GuzzleHttp\Psr7\parse_query;
 

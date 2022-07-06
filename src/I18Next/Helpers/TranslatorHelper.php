@@ -2,7 +2,7 @@
 
 namespace ZnLib\Components\I18Next\Helpers;
 
-use ZnCore\Base\Arr\Helpers\ArrayHelper;
+use ZnCore\Arr\Helpers\ArrayHelper;
 
 class TranslatorHelper
 {

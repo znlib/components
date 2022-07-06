@@ -3,7 +3,7 @@
 namespace ZnLib\Components\Status\Enums;
 
 use ZnLib\Components\I18Next\Facades\I18Next;
-use ZnCore\Base\Enum\Interfaces\GetLabelsInterface;
+use ZnCore\Enum\Interfaces\GetLabelsInterface;
 
 /**
  * Статусы сущности
