@@ -4,7 +4,7 @@ namespace ZnLib\Components\DynamicEntity\Entities;
 
 use Exception;
 use ZnLib\Components\DynamicEntity\Interfaces\DynamicEntityAttributesInterface;
-use ZnCore\Domain\Entity\Interfaces\EntityIdInterface;
+use ZnCore\Entity\Interfaces\EntityIdInterface;
 use ZnLib\Components\DynamicEntity\Interfaces\ValidateDynamicEntityInterface;
 use ZnLib\Telegram\Domain\Facades\Bot;
 

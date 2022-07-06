@@ -4,7 +4,7 @@ namespace ZnLib\Components\Format\Encoders;
 
 use ZnCore\Base\Instance\Helpers\InstanceHelper;
 use ZnCore\Contract\Encoder\Interfaces\EncoderInterface;
-use ZnCore\Domain\Collection\Interfaces\Enumerable;
+use ZnCore\Collection\Interfaces\Enumerable;
 
 /**
  * Агрегатный кодер

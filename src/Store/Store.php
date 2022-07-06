@@ -3,8 +3,8 @@
 namespace ZnLib\Components\Store;
 
 use ZnCore\Base\Arr\Helpers\ArrayHelper;
-use ZnCore\Base\FileSystem\Helpers\FilePathHelper;
-use ZnCore\Base\FileSystem\Helpers\FileStorageHelper;
+use ZnCore\FileSystem\Helpers\FilePathHelper;
+use ZnCore\FileSystem\Helpers\FileStorageHelper;
 use ZnCore\Base\Instance\Helpers\ClassHelper;
 use ZnCore\Base\Instance\Libs\Resolvers\InstanceResolver;
 use ZnLib\Components\Store\Drivers\DriverInterface;

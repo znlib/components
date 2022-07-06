@@ -3,7 +3,7 @@
 namespace ZnLib\Components\Store\Drivers;
 
 
-use ZnCore\Base\Text\Helpers\TextHelper;
+use ZnCore\Text\Helpers\TextHelper;
 
 class Csv implements DriverInterface
 {

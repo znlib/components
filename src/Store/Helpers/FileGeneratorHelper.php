@@ -4,7 +4,7 @@ namespace ZnLib\Components\Store\Helpers;
 
 use Yii;
 use ZnCore\Base\Arr\Helpers\ArrayHelper;
-use ZnCore\Base\FileSystem\Helpers\FileStorageHelper;
+use ZnCore\FileSystem\Helpers\FileStorageHelper;
 
 class FileGeneratorHelper
 {

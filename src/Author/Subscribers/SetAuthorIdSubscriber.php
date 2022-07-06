@@ -8,7 +8,7 @@ use ZnCore\Contract\User\Exceptions\UnauthorizedException;
 use ZnUser\Authentication\Domain\Interfaces\Services\AuthServiceInterface;
 use ZnCore\Domain\Domain\Enums\EventEnum;
 use ZnCore\Domain\Domain\Events\EntityEvent;
-use ZnCore\Domain\Entity\Helpers\EntityHelper;
+use ZnCore\Entity\Helpers\EntityHelper;
 
 /**
  * @todo: перенести в отдельный пакет

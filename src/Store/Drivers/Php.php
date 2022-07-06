@@ -4,10 +4,10 @@ namespace ZnLib\Components\Store\Drivers;
 
 use Symfony\Component\VarExporter\VarExporter;
 use ZnCore\Base\Arr\Helpers\ArrayHelper;
-use ZnCore\Base\FileSystem\Helpers\FileStorageHelper;
+use ZnCore\FileSystem\Helpers\FileStorageHelper;
 use ZnLib\Components\Store\Helpers\FileGeneratorHelper;
 
-use ZnCore\Base\Text\Helpers\TextHelper;
+use ZnCore\Text\Helpers\TextHelper;
 
 class Php implements DriverInterface
 {

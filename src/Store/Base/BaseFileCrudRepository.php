@@ -3,8 +3,8 @@
 namespace ZnLib\Components\Store\Base;
 
 use ZnLib\Components\ArrayRepository\Traits\ArrayCrudRepositoryTrait;
-use ZnCore\Base\DotEnv\Domain\Libs\DotEnv;
-use ZnCore\Base\FileSystem\Helpers\FilePathHelper;
+use ZnCore\DotEnv\Domain\Libs\DotEnv;
+use ZnCore\FileSystem\Helpers\FilePathHelper;
 use ZnCore\Domain\Query\Entities\Query;
 use ZnCore\Domain\Repository\Interfaces\CrudRepositoryInterface;
 use ZnLib\Components\Store\StoreFile;

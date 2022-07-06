@@ -4,8 +4,8 @@ namespace ZnLib\Components\DynamicEntity\Libs\Validators;
 
 use ZnLib\Components\DynamicEntity\Helpers\DynamicEntityValidationHelper;
 use ZnLib\Components\DynamicEntity\Interfaces\ValidateDynamicEntityInterface;
-use ZnCore\Base\Validation\Interfaces\ValidatorInterface;
-use ZnCore\Base\Validation\Libs\Validators\BaseValidator;
+use ZnCore\Validation\Interfaces\ValidatorInterface;
+use ZnCore\Validation\Libs\Validators\BaseValidator;
 
 class DynamicEntityValidator extends BaseValidator implements ValidatorInterface
 {

@@ -2,7 +2,7 @@
 
 namespace ZnLib\Components\I18Next\Libs\TranslationLoaders;
 
-use ZnCore\Base\FileSystem\Helpers\FilePathHelper;
+use ZnCore\FileSystem\Helpers\FilePathHelper;
 use ZnLib\Components\I18Next\Interfaces\TranslationLoaders\TranslationLoaderInterface;
 
 class JsonLoader implements TranslationLoaderInterface

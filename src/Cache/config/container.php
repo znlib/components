@@ -5,7 +5,7 @@ use Psr\Log\LoggerInterface;
 use Symfony\Component\Cache\Adapter\AdapterInterface;
 use Symfony\Component\Cache\Adapter\ArrayAdapter;
 use Symfony\Component\Cache\Adapter\FilesystemAdapter;
-use ZnCore\Base\DotEnv\Domain\Libs\DotEnv;
+use ZnCore\DotEnv\Domain\Libs\DotEnv;
 use ZnCore\Base\Env\Helpers\EnvHelper;
 use ZnLib\Components\Time\Enums\TimeEnum;
 

@@ -9,8 +9,8 @@ use ZnCore\Domain\Domain\Enums\EventEnum;
 use ZnCore\Domain\Query\Enums\OperatorEnum;
 use ZnCore\Domain\Domain\Events\EntityEvent;
 use ZnCore\Domain\Domain\Events\QueryEvent;
-use ZnCore\Domain\EntityManager\Interfaces\EntityManagerInterface;
-use ZnCore\Domain\EntityManager\Traits\EntityManagerAwareTrait;
+use ZnCore\EntityManager\Interfaces\EntityManagerInterface;
+use ZnCore\EntityManager\Traits\EntityManagerAwareTrait;
 
 class SoftDeleteSubscriber implements EventSubscriberInterface
 {

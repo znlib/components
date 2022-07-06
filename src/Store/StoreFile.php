@@ -2,7 +2,7 @@
 
 namespace ZnLib\Components\Store;
 
-use ZnCore\Base\FileSystem\Helpers\FilePathHelper;
+use ZnCore\FileSystem\Helpers\FilePathHelper;
 
 class StoreFile
 {

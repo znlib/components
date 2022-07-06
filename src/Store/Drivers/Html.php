@@ -2,7 +2,7 @@
 
 namespace ZnLib\Components\Store\Drivers;
 
-use ZnCore\Base\FileSystem\Helpers\FileStorageHelper;
+use ZnCore\FileSystem\Helpers\FileStorageHelper;
 
 class Html implements DriverInterface
 {

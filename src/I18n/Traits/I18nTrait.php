@@ -6,8 +6,8 @@ use ZnBundle\Language\Domain\Entities\LanguageEntity;
 use ZnBundle\Language\Domain\Interfaces\Services\LanguageServiceInterface;
 use ZnBundle\Language\Domain\Interfaces\Services\RuntimeLanguageServiceInterface;
 use ZnCore\Base\Arr\Helpers\ArrayHelper;
-use ZnCore\Base\Container\Helpers\ContainerHelper;
-use ZnCore\Domain\Entity\Helpers\EntityHelper;
+use ZnCore\Container\Helpers\ContainerHelper;
+use ZnCore\Entity\Helpers\EntityHelper;
 use ZnLib\Components\I18n\Enums\LanguageI18nEnum;
 
 trait I18nTrait
@@ -17,7 +17,7 @@ trait I18nTrait
     protected $_languageService;
     protected $_runtimeLanguageService;
 
-    /** @var \ZnCore\Domain\Collection\Interfaces\Enumerable | LanguageEntity[] */
+    /** @var \ZnCore\Collection\Interfaces\Enumerable | LanguageEntity[] */
     static protected $_languages = null;
 
     protected function _forgeLanguages(LanguageServiceInterface $languageService = null)

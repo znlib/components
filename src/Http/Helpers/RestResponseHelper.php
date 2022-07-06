@@ -3,7 +3,7 @@
 namespace ZnLib\Components\Http\Helpers;
 
 use Psr\Http\Message\ResponseInterface;
-use ZnCore\Base\FileSystem\Helpers\MimeTypeHelper;
+use ZnCore\FileSystem\Helpers\MimeTypeHelper;
 use ZnCore\Domain\DataProvider\Entities\DataProviderEntity;
 use ZnLib\Components\Http\Enums\HttpHeaderEnum;
 use ZnLib\Components\Store\Store;

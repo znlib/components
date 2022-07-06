@@ -3,12 +3,12 @@
 namespace ZnLib\Components\Store\Base;
 
 use ZnCore\Contract\Common\Exceptions\NotImplementedMethodException;
-use ZnCore\Base\DotEnv\Domain\Libs\DotEnv;
-use ZnCore\Base\FileSystem\Helpers\FilePathHelper;
+use ZnCore\DotEnv\Domain\Libs\DotEnv;
+use ZnCore\FileSystem\Helpers\FilePathHelper;
 use ZnLib\Components\Store\StoreFile;
-use ZnCore\Domain\EntityManager\Interfaces\EntityManagerInterface;
+use ZnCore\EntityManager\Interfaces\EntityManagerInterface;
 use ZnCore\Domain\Repository\Interfaces\RepositoryInterface;
-use ZnCore\Domain\EntityManager\Traits\EntityManagerAwareTrait;
+use ZnCore\EntityManager\Traits\EntityManagerAwareTrait;
 
 abstract class BaseFileRepository implements RepositoryInterface
 {

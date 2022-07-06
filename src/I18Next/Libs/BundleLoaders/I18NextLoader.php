@@ -4,7 +4,7 @@ namespace ZnLib\Components\I18Next\Libs\BundleLoaders;
 
 use ZnCore\Base\Arr\Helpers\ArrayHelper;
 use ZnCore\Base\Bundle\Base\BaseLoader;
-use ZnCore\Base\Container\Helpers\ContainerHelper;
+use ZnCore\Container\Helpers\ContainerHelper;
 use ZnCore\Contract\Common\Exceptions\ReadOnlyException;
 use ZnLib\Components\I18Next\Facades\I18Next;
 

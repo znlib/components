@@ -2,7 +2,7 @@
 
 namespace ZnLib\Components\I18Next\Facades;
 
-use ZnCore\Base\Container\Traits\ContainerAwareStaticAttributeTrait;
+use ZnCore\Container\Traits\ContainerAwareStaticAttributeTrait;
 use ZnLib\Components\I18Next\Interfaces\Services\TranslationServiceInterface;
 
 class I18Next
