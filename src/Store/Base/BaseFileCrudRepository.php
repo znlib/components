@@ -2,7 +2,7 @@
 
 namespace ZnLib\Components\Store\Base;
 
-use ZnCore\Base\Arr\Traits\ArrayCrudRepositoryTrait;
+use ZnLib\Components\ArrayRepository\Traits\ArrayCrudRepositoryTrait;
 use ZnCore\Base\DotEnv\Domain\Libs\DotEnv;
 use ZnCore\Base\FileSystem\Helpers\FilePathHelper;
 use ZnCore\Domain\Query\Entities\Query;
