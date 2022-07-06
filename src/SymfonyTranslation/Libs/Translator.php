@@ -5,8 +5,8 @@ namespace ZnLib\Components\SymfonyTranslation\Libs;
 use Psr\Log\LoggerInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use ZnCore\Env\Helpers\EnvHelper;
-use ZnLib\Components\I18Next\Exceptions\NotFoundBundleException;
-use ZnLib\Components\I18Next\Facades\I18Next;
+use ZnLib\I18Next\Exceptions\NotFoundBundleException;
+use ZnLib\I18Next\Facades\I18Next;
 use ZnLib\Components\SymfonyTranslation\Helpers\TranslatorHelper;
 use ZnCore\Entity\Helpers\EntityHelper;
 

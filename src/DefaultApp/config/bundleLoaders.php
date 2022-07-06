@@ -2,7 +2,7 @@
 
 use ZnCore\Container\Libs\BundleLoaders\ContainerLoader;
 use ZnDatabase\Migration\Domain\Libs\BundleLoaders\MigrationLoader;
-use ZnLib\Components\I18Next\Libs\BundleLoaders\I18NextLoader;
+use ZnLib\I18Next\Libs\BundleLoaders\I18NextLoader;
 use ZnUser\Rbac\Domain\Libs\BundleLoaders\RbacConfigLoader;
 
 return [
