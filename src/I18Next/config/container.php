@@ -19,8 +19,8 @@ return [
             $translationService = $container->get(TranslationService::class);
             $translationService->setLanguage($defaultLang);
 
-            /** @var \ZnCore\Base\ConfigManager\Interfaces\ConfigManagerInterface $configManager */
-            $configManager = $container->get(\ZnCore\Base\ConfigManager\Interfaces\ConfigManagerInterface::class);
+            /** @var \ZnCore\ConfigManager\Interfaces\ConfigManagerInterface $configManager */
+            $configManager = $container->get(\ZnCore\ConfigManager\Interfaces\ConfigManagerInterface::class);
             $bundleConfig = $configManager->get('i18nextBundles', []);
 
             $translationService->setBundles($bundleConfig);
