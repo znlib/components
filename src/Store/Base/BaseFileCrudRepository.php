@@ -30,7 +30,7 @@ abstract class BaseFileCrudRepository extends BaseFileRepository implements Crud
         return 'php';
     }
 
-    protected function forgeQuery(Query $query = null)
+    protected function forgeQuery(Query $query = null): Query
     {
         $query = Query::forge($query);
         return $query;
