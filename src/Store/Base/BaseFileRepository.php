@@ -38,10 +38,10 @@ abstract class BaseFileRepository implements RepositoryInterface
     public function fileName(): string
     {
         $tableName = $this->tableName();
-        $root = FilePathHelper::rootPath();
+//        $root = FilePathHelper::rootPath();
         $directory = $this->directory();
         $ext = $this->fileExt();
-        $path = "$root/$directory/$tableName.$ext";
+        $path = "$directory/$tableName.$ext";
         return $path;
     }
 
