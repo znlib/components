@@ -13,7 +13,7 @@ class StatusSimpleEnum implements GetLabelsInterface
 
     const ENABLED = 100;
     const DISABLED = 0;
-    const DELETED = self::DISABLED;
+    const DELETED = -10;
 
     public static function getLabels()
     {
