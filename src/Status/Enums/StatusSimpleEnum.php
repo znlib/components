@@ -20,6 +20,7 @@ class StatusSimpleEnum implements GetLabelsInterface
         return [
             self::ENABLED => I18Next::t('core', 'status.enabled'),
             self::DISABLED => I18Next::t('core', 'status.disabled'),
+            self::DELETED => I18Next::t('core', 'status.deleted'),
         ];
     }
 }
