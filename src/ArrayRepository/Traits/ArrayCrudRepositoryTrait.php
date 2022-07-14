@@ -5,13 +5,13 @@ namespace ZnLib\Components\ArrayRepository\Traits;
 use ZnCore\Collection\Interfaces\Enumerable;
 use ZnCore\Arr\Helpers\FilterHelper;
 use ZnCore\Contract\Common\Exceptions\InvalidMethodParameterException;
-use ZnCore\Domain\Traits\DispatchEventTrait;
+use ZnDomain\Domain\Traits\DispatchEventTrait;
 use ZnCore\Entity\Exceptions\NotFoundException;
 use ZnCore\Entity\Helpers\EntityHelper;
 use ZnCore\Entity\Interfaces\EntityIdInterface;
 use ZnCore\Query\Entities\Query;
-use ZnCore\Repository\Traits\CrudRepositoryFindAllTrait;
-use ZnCore\Repository\Traits\CrudRepositoryFindOneTrait;
+use ZnDomain\Repository\Traits\CrudRepositoryFindAllTrait;
+use ZnDomain\Repository\Traits\CrudRepositoryFindOneTrait;
 
 trait ArrayCrudRepositoryTrait
 {

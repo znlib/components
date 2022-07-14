@@ -5,12 +5,12 @@ namespace ZnLib\Components\SoftDelete\Subscribers;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use ZnLib\Components\Status\Enums\StatusEnum;
 use ZnCore\Query\Entities\Where;
-use ZnCore\Domain\Enums\EventEnum;
+use ZnDomain\Domain\Enums\EventEnum;
 use ZnCore\Query\Enums\OperatorEnum;
-use ZnCore\Domain\Events\EntityEvent;
-use ZnCore\Domain\Events\QueryEvent;
-use ZnCore\EntityManager\Interfaces\EntityManagerInterface;
-use ZnCore\EntityManager\Traits\EntityManagerAwareTrait;
+use ZnDomain\Domain\Events\EntityEvent;
+use ZnDomain\Domain\Events\QueryEvent;
+use ZnDomain\EntityManager\Interfaces\EntityManagerInterface;
+use ZnDomain\EntityManager\Traits\EntityManagerAwareTrait;
 
 class SoftDeleteSubscriber implements EventSubscriberInterface
 {

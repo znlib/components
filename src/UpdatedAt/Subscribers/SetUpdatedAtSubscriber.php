@@ -3,8 +3,8 @@
 namespace ZnLib\Components\UpdatedAt\Subscribers;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use ZnCore\Domain\Enums\EventEnum;
-use ZnCore\Domain\Events\EntityEvent;
+use ZnDomain\Domain\Enums\EventEnum;
+use ZnDomain\Domain\Events\EntityEvent;
 
 /**
  * @todo: перенести в отдельный пакет

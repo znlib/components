@@ -4,10 +4,10 @@ namespace ZnLib\Components\Author\Subscribers;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use ZnUser\Authentication\Domain\Interfaces\Services\AuthServiceInterface;
-use ZnCore\Domain\Enums\EventEnum;
-use ZnCore\Domain\Events\QueryEvent;
-use ZnCore\EntityManager\Interfaces\EntityManagerInterface;
-use ZnCore\EntityManager\Traits\EntityManagerAwareTrait;
+use ZnDomain\Domain\Enums\EventEnum;
+use ZnDomain\Domain\Events\QueryEvent;
+use ZnDomain\EntityManager\Interfaces\EntityManagerInterface;
+use ZnDomain\EntityManager\Traits\EntityManagerAwareTrait;
 
 class AuthorQuerySubscriber implements EventSubscriberInterface
 {

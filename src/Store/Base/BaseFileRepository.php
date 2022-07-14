@@ -6,9 +6,9 @@ use ZnCore\Contract\Common\Exceptions\NotImplementedMethodException;
 use ZnCore\DotEnv\Domain\Libs\DotEnv;
 use ZnCore\FileSystem\Helpers\FilePathHelper;
 use ZnLib\Components\Store\StoreFile;
-use ZnCore\EntityManager\Interfaces\EntityManagerInterface;
-use ZnCore\Repository\Interfaces\RepositoryInterface;
-use ZnCore\EntityManager\Traits\EntityManagerAwareTrait;
+use ZnDomain\EntityManager\Interfaces\EntityManagerInterface;
+use ZnDomain\Repository\Interfaces\RepositoryInterface;
+use ZnDomain\EntityManager\Traits\EntityManagerAwareTrait;
 
 abstract class BaseFileRepository implements RepositoryInterface
 {
