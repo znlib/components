@@ -6,8 +6,8 @@ use ZnBundle\Language\Domain\Entities\LanguageEntity;
 use ZnBundle\Language\Domain\Interfaces\Services\LanguageServiceInterface;
 use ZnBundle\Language\Domain\Interfaces\Services\RuntimeLanguageServiceInterface;
 use ZnCore\Arr\Helpers\ArrayHelper;
+use ZnCore\Code\Helpers\PropertyHelper;
 use ZnCore\Container\Helpers\ContainerHelper;
-use ZnDomain\Entity\Helpers\EntityHelper;
 use ZnLib\Components\I18n\Enums\LanguageI18nEnum;
 
 trait I18nTrait
@@ -87,7 +87,7 @@ trait I18nTrait
     protected function _getI18n(string $attribute, string $language = null): ?string
     {
         $i18nAttribute = $attribute . 'I18n';
-        $value = EntityHelper::getValue($this, $i18nAttribute);
+        $value = PropertyHelper::getValue($this, $i18nAttribute);
         if (!empty($value)) {
             $translations = !is_array($value) ? json_decode($value, JSON_OBJECT_AS_ARRAY) : $value;
             $language = $this->_getCurrentLanguage($language);
