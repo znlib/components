@@ -7,7 +7,7 @@ use ZnBundle\Language\Domain\Interfaces\Services\LanguageServiceInterface;
 use ZnBundle\Language\Domain\Interfaces\Services\RuntimeLanguageServiceInterface;
 use ZnCore\Arr\Helpers\ArrayHelper;
 use ZnCore\Container\Helpers\ContainerHelper;
-use ZnCore\Entity\Helpers\EntityHelper;
+use ZnDomain\Entity\Helpers\EntityHelper;
 use ZnLib\Components\I18n\Enums\LanguageI18nEnum;
 
 trait I18nTrait

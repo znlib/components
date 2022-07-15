@@ -6,8 +6,8 @@ use Psr\Log\NullLogger;
 use Symfony\Component\Cache\Adapter\AdapterInterface;
 use Symfony\Component\Cache\Adapter\ArrayAdapter;
 use Symfony\Contracts\Cache\CacheInterface;
-use ZnCore\Validation\Libs\Validators\ChainValidator;
-use ZnCore\Validation\Libs\Validators\ClassMetadataValidator;
+use ZnDomain\Validator\Libs\Validators\ChainValidator;
+use ZnDomain\Validator\Libs\Validators\ClassMetadataValidator;
 use ZnLib\Components\DynamicEntity\Libs\Validators\DynamicEntityValidator;
 
 return [

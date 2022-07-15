@@ -4,10 +4,10 @@ namespace ZnLib\Components\DynamicEntity\Helpers;
 
 use Symfony\Component\PropertyAccess\Exception\UninitializedPropertyException;
 use Symfony\Component\Validator\ConstraintViolationList;
-use ZnCore\Validation\Entities\ValidationErrorEntity;
+use ZnDomain\Validator\Entities\ValidationErrorEntity;
 use ZnCore\Collection\Interfaces\Enumerable;
 use ZnCore\Collection\Libs\Collection;
-use ZnCore\Entity\Factories\PropertyAccess;
+use ZnDomain\Entity\Factories\PropertyAccess;
 use ZnLib\Components\DynamicEntity\Interfaces\ValidateDynamicEntityInterface;
 
 class DynamicEntityValidationHelper

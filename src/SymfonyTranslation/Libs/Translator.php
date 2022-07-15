@@ -8,7 +8,7 @@ use ZnCore\Env\Helpers\EnvHelper;
 use ZnLib\I18Next\Exceptions\NotFoundBundleException;
 use ZnLib\I18Next\Facades\I18Next;
 use ZnLib\Components\SymfonyTranslation\Helpers\TranslatorHelper;
-use ZnCore\Entity\Helpers\EntityHelper;
+use ZnDomain\Entity\Helpers\EntityHelper;
 
 class Translator implements TranslatorInterface
 {
