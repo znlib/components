@@ -3,6 +3,7 @@
 namespace ZnLib\Components\Validation\Constraints;
 
 use Symfony\Component\Validator\Constraint;
+use ZnDomain\Validator\Constraints\BaseValidator;
 
 class PersonNameValidator extends BaseValidator
 {
