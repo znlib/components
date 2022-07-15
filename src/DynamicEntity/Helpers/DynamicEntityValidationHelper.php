@@ -7,7 +7,7 @@ use Symfony\Component\Validator\ConstraintViolationList;
 use ZnDomain\Validator\Entities\ValidationErrorEntity;
 use ZnCore\Collection\Interfaces\Enumerable;
 use ZnCore\Collection\Libs\Collection;
-use ZnDomain\Entity\Factories\PropertyAccess;
+use ZnCore\Code\Factories\PropertyAccess;
 use ZnLib\Components\DynamicEntity\Interfaces\ValidateDynamicEntityInterface;
 
 class DynamicEntityValidationHelper
