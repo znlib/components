@@ -3,15 +3,17 @@
 namespace ZnLib\Components\ShellRobot\Domain\Libs\App;
 
 use ZnCore\Arr\Helpers\ArrayHelper;
-use ZnCore\Pattern\Singleton\SingletonTrait;
 use ZnCore\Text\Helpers\TemplateHelper;
 
 class VarProcessor
 {
 
-//    use SingletonTrait;
-
     private $vars;
+
+    public function __construct(array $vars)
+    {
+        $this->setVars($vars);
+    }
 
     public function process(string $value): string
     {
@@ -41,15 +43,35 @@ class VarProcessor
 
     public function get(string $key, $default = null)
     {
-        return ArrayHelper::getValue($this->vars, $key, $default);
+        $value = ArrayHelper::getValue($this->vars, $key, $default);
+        $value = $this->prepareItem($value);
+        return $value;
+    }
+
+    private function prepareItem($value)
+    {
+        if (is_callable($value)) {
+            $value = call_user_func($value);
+        }
+        return $value;
+    }
+
+    private function prepareItems($vars)
+    {
+        foreach ($vars as $varKey => $varValue) {
+            $vars[$varKey] = $this->prepareItem($varValue);
+        }
+        return $vars;
     }
 
     private function render($value, $vars)
     {
+        $vars = $this->prepareItems($vars);
+        $value = $this->prepareItem($value);
         return TemplateHelper::render($value, $vars, '{{', '}}');
     }
 
-    public function setVars(array $vars): void
+    private function setVars(array $vars): void
     {
         $this->vars = $vars;
         $this->initVars();

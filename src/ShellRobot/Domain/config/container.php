@@ -8,18 +8,29 @@ use ZnLib\Components\ShellRobot\Domain\Libs\App\VarProcessor;
 return [
     'singletons' => [
         VarProcessor::class => function (ContainerInterface $container) {
-            $varProcessor = new VarProcessor();
+
             $config = include($_ENV['DEPLOYER_CONFIG_FILE']);
             $vars = $config['vars'];
-            $vars['userName'] = $config['connections']['default']['user'];
-            $vars['homeUserDir'] = "/home/{$vars['userName']}";
-            $varProcessor->setVars($vars);
+
+            $user = $config['connections']['default']['user'];
+
+            $vars['userName'] = $user;
+            $vars['homeUserDir'] = "/home/{$user}";
+
+            /*$vars['homeUserDir'] = function () use ($user) {
+                return "/home/{$user}";
+            };*/
+
+            $varProcessor = new VarProcessor($vars);
+//            $varProcessor->setVars($vars);
             return $varProcessor;
         },
         ConfigProcessor::class => function (ContainerInterface $container) {
-            $configProcessor = new ConfigProcessor();
+
             $config = include($_ENV['DEPLOYER_CONFIG_FILE']);
-            $configProcessor->setConfig($config);
+
+            $configProcessor = new ConfigProcessor($config);
+//            $configProcessor->setConfig($config);
             return $configProcessor;
         },
         ConnectionProcessor::class => function (ContainerInterface $container) {

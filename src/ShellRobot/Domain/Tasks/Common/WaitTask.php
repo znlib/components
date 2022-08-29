@@ -13,6 +13,9 @@ class WaitTask extends BaseShell implements TaskInterface
 
     public function run()
     {
+        if(empty($this->seconds)) {
+            throw new \Exception('');
+        }
         sleep($this->seconds);
     }
 }

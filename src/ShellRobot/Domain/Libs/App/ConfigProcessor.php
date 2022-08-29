@@ -3,15 +3,17 @@
 namespace ZnLib\Components\ShellRobot\Domain\Libs\App;
 
 use ZnCore\Arr\Helpers\ArrayHelper;
-use ZnCore\Pattern\Singleton\SingletonTrait;
 use ZnLib\Components\ShellRobot\Domain\Factories\ShellFactory;
 
 class ConfigProcessor
 {
 
-//    use SingletonTrait;
-
     private $config;
+
+    public function __construct(array $config)
+    {
+        $this->setConfig($config);
+    }
 
     public function get(string $key, $default = null)
     {
@@ -27,7 +29,7 @@ class ConfigProcessor
         return $this->config;
     }*/
 
-    public function setConfig(array $config): void
+    private function setConfig(array $config): void
     {
         $this->config = $config;
     }

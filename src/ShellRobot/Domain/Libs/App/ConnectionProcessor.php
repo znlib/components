@@ -2,16 +2,16 @@
 
 namespace ZnLib\Components\ShellRobot\Domain\Libs\App;
 
-use ZnCore\Pattern\Singleton\SingletonTrait;
 use ZnLib\Components\ShellRobot\Domain\Entities\HostEntity;
+use ZnLib\Components\ShellRobot\Domain\Enums\VarEnum;
 use ZnLib\Components\ShellRobot\Domain\Factories\ShellFactory;
 
 class ConnectionProcessor
 {
 
-//    use SingletonTrait;
+//    private $currentConnection = 'default';
 
-    private $currentConnection = 'default';
+    const DEFAULT_CONNECTION_NAME = 'default';
 
     public function get(?string $connectionName = null)
     {
@@ -27,10 +27,10 @@ class ConnectionProcessor
         return $hostEntity;
     }
 
-    public function switchCurrentConnection(string $connectionName)
+    /*public function switchCurrentConnection(string $connectionName)
     {
         $this->currentConnection = $connectionName;
-    }
+    }*/
 
     public function getCurrent()
     {
@@ -40,7 +40,7 @@ class ConnectionProcessor
 
     private function getCurrentConnectionName()
     {
-        return ShellFactory::getVarProcessor()->get('currentConnection', $this->currentConnection);
+        return ShellFactory::getVarProcessor()->get(VarEnum::CURRENT_CONNECTION, self::DEFAULT_CONNECTION_NAME);
     }
 
     private function createEntity(array $connection): HostEntity
