@@ -9,27 +9,41 @@ use ZnLib\Components\ShellRobot\Domain\Factories\ShellFactory;
 class ConnectionProcessor
 {
 
-    use SingletonTrait;
+//    use SingletonTrait;
 
-    public static function get(?string $connectionName = null)
+    private $currentConnection = 'default';
+
+    public function get(?string $connectionName = null)
     {
-        $connectionName = $connectionName ?: self::getCurrentConnectionName();
+        $connectionName = $connectionName ?: $this->getCurrentConnectionName();
         $connection = ShellFactory::getConfigProcessor()->get("connections.$connectionName");
         return $connection;
     }
 
-    public static function getCurrent()
+    public function oneByName(?string $connectionName = null): HostEntity
     {
-        $connectionName = self::getCurrentConnectionName();
-        return self::get($connectionName);
+        $connection = $this->get($connectionName);
+        $hostEntity = $this->createEntity($connection);
+        return $hostEntity;
     }
 
-    public static function getCurrentConnectionName(string $defaultConnectionName = 'default')
+    public function switchCurrentConnection(string $connectionName)
     {
-        return ShellFactory::getVarProcessor()->get('currentConnection', $defaultConnectionName);
+        $this->currentConnection = $connectionName;
     }
 
-    public static function createEntity(array $connection): HostEntity
+    public function getCurrent()
+    {
+        $connectionName = $this->getCurrentConnectionName();
+        return $this->get($connectionName);
+    }
+
+    private function getCurrentConnectionName()
+    {
+        return ShellFactory::getVarProcessor()->get('currentConnection', $this->currentConnection);
+    }
+
+    private function createEntity(array $connection): HostEntity
     {
         $host = new HostEntity();
         $host->setHost($connection['host'] ?? null);

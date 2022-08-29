@@ -9,42 +9,39 @@ use ZnCore\Text\Helpers\TemplateHelper;
 class VarProcessor
 {
 
-    use SingletonTrait;
+//    use SingletonTrait;
 
-    private static $vars;
+    private $vars;
 
     public function process(string $value): string
     {
-//        self::init();
-        return $this->render($value, self::$vars);
+        return $this->render($value, $this->vars);
     }
 
     public function processList(array $list): array
     {
-        $callback = [static::class, 'process'];
+        $callback = [$this, 'process'];
         $list = array_map($callback, $list);
         return $list;
     }
 
     public function set(string $key, $value): void
     {
-//        self::init();
-        ArrayHelper::set(self::$vars, $key, $value);
+        ArrayHelper::set($this->vars, $key, $value);
         $this->initVars();
     }
 
     public function setList(array $list): void
     {
-//        self::init();
         foreach ($list as $key => $value) {
-            ArrayHelper::set(self::$vars, $key, $value);
+            ArrayHelper::set($this->vars, $key, $value);
         }
         $this->initVars();
     }
 
     public function get(string $key, $default = null)
     {
-        return ArrayHelper::getValue(self::$vars, $key, $default);
+        return ArrayHelper::getValue($this->vars, $key, $default);
     }
 
     private function render($value, $vars)
@@ -54,24 +51,13 @@ class VarProcessor
 
     public function setVars(array $vars): void
     {
-        self::$vars = $vars;
+        $this->vars = $vars;
         $this->initVars();
     }
 
-    /*private static function init()
-    {
-        if (self::$vars) {
-            return;
-        }
-//        $config = include($_ENV['DEPLOYER_CONFIG_FILE']);
-//        self::$vars = $config['vars'];
-
-//        self::$vars = ConfigProcessor::get('vars');
-    }*/
-
     private function initVars()
     {
-        self::$vars = $this->processVars(self::$vars);
+        $this->vars = $this->processVars($this->vars);
     }
 
     private function processVars($vars)
