@@ -4,6 +4,7 @@ namespace ZnLib\Components\ShellRobot\Domain\Libs\App;
 
 use ZnCore\Pattern\Singleton\SingletonTrait;
 use ZnLib\Components\ShellRobot\Domain\Entities\HostEntity;
+use ZnLib\Components\ShellRobot\Domain\Factories\ShellFactory;
 
 class ConnectionProcessor
 {
@@ -13,7 +14,7 @@ class ConnectionProcessor
     public static function get(?string $connectionName = null)
     {
         $connectionName = $connectionName ?: self::getCurrentConnectionName();
-        $connection = ConfigProcessor::get("connections.$connectionName");
+        $connection = ShellFactory::getConfigProcessor()->get("connections.$connectionName");
         return $connection;
     }
 
@@ -25,7 +26,7 @@ class ConnectionProcessor
 
     public static function getCurrentConnectionName(string $defaultConnectionName = 'default')
     {
-        return VarProcessor::get('currentConnection', $defaultConnectionName);
+        return ShellFactory::getVarProcessor()->get('currentConnection', $defaultConnectionName);
     }
 
     public static function createEntity(array $connection): HostEntity

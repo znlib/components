@@ -2,7 +2,7 @@
 
 namespace ZnLib\Components\ShellRobot\Domain\Repositories\Config;
 
-use ZnLib\Components\ShellRobot\Domain\Libs\App\ConfigProcessor;
+use ZnLib\Components\ShellRobot\Domain\Factories\ShellFactory;
 
 class ProfileRepository
 {
@@ -16,7 +16,7 @@ class ProfileRepository
 
     public static function findAll()
     {
-        $profiles = ConfigProcessor::get('profiles');
+        $profiles = ShellFactory::getConfigProcessor()->get('profiles');
         $new = [];
         foreach ($profiles as $profileName => $profileConfig) {
             if (!is_string($profileName)) {

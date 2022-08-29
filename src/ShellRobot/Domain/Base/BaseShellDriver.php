@@ -3,7 +3,7 @@
 namespace ZnLib\Components\ShellRobot\Domain\Base;
 
 use ZnCore\Arr\Helpers\ArrayHelper;
-use ZnLib\Components\ShellRobot\Domain\Libs\App\ConnectionProcessor;
+use ZnLib\Components\ShellRobot\Domain\Factories\ShellFactory;
 use ZnLib\Console\Domain\Base\BaseShellNew;
 
 abstract class BaseShellDriver
@@ -77,13 +77,13 @@ abstract class BaseShellDriver
 
     protected static function getSudoCommandTemplate()
     {
-        $connection = ConnectionProcessor::getCurrent();
+        $connection = ShellFactory::getConnectionProcessor()->getCurrent();
         return ArrayHelper::getValue($connection, 'sudo.commandTemplate', 'sudo {command}');
     }
 
     protected static function getSudoCommandName(): string
     {
-        $connection = ConnectionProcessor::getCurrent();
+        $connection = ShellFactory::getConnectionProcessor()->getCurrent();
         return ArrayHelper::getValue($connection, 'sudo.command', 'sudo');
     }
 

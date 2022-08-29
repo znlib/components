@@ -13,69 +13,73 @@ class VarProcessor
 
     private static $vars;
 
-    public static function process(string $value): string
+    public function process(string $value): string
     {
-        self::init();
-        return self::render($value, self::$vars);
+//        self::init();
+        return $this->render($value, self::$vars);
     }
 
-    public static function processList(array $list): array
+    public function processList(array $list): array
     {
         $callback = [static::class, 'process'];
         $list = array_map($callback, $list);
         return $list;
     }
 
-    public static function set(string $key, $value): void
+    public function set(string $key, $value): void
     {
-        self::init();
+//        self::init();
         ArrayHelper::set(self::$vars, $key, $value);
-        self::initVars();
+        $this->initVars();
     }
 
-    public static function setList(array $list): void
+    public function setList(array $list): void
     {
-        self::init();
+//        self::init();
         foreach ($list as $key => $value) {
             ArrayHelper::set(self::$vars, $key, $value);
         }
-        self::initVars();
+        $this->initVars();
     }
 
-    public static function get(string $key, $default = null)
+    public function get(string $key, $default = null)
     {
         return ArrayHelper::getValue(self::$vars, $key, $default);
     }
 
-    private static function render($value, $vars)
+    private function render($value, $vars)
     {
         return TemplateHelper::render($value, $vars, '{{', '}}');
     }
 
-    private static function init()
+    public function setVars(array $vars): void
+    {
+        self::$vars = $vars;
+        $this->initVars();
+    }
+
+    /*private static function init()
     {
         if (self::$vars) {
             return;
         }
-        $config = include($_ENV['DEPLOYER_CONFIG_FILE']);
-        self::$vars = $config['vars'];
-        $userName = $config['connections']['default']['user'];
-        self::$vars['homeUserDir'] = "/home/{$userName}";
-        self::$vars['userName'] = $userName;
-        self::initVars();
-    }
+//        $config = include($_ENV['DEPLOYER_CONFIG_FILE']);
+//        self::$vars = $config['vars'];
 
-    public static function initVars()
+//        self::$vars = ConfigProcessor::get('vars');
+    }*/
+
+    private function initVars()
     {
-        self::$vars = self::processVars(self::$vars);
+        self::$vars = $this->processVars(self::$vars);
     }
 
-    private static function processVars($vars)
+    private function processVars($vars)
     {
         do {
             $oldVars = $vars;
             foreach ($vars as $index => $var) {
-                $vars[$index] = self::render($var, $vars);
+                $vars[$index] = $this->render($var, $vars);
             }
         } while ($oldVars !== $vars);
         return $vars;

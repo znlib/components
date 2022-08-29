@@ -3,8 +3,8 @@
 namespace ZnLib\Components\ShellRobot\Domain\Tasks\LinuxPackage;
 
 use ZnLib\Components\ShellRobot\Domain\Base\BaseShell;
+use ZnLib\Components\ShellRobot\Domain\Factories\ShellFactory;
 use ZnLib\Components\ShellRobot\Domain\Interfaces\TaskInterface;
-use ZnLib\Components\ShellRobot\Domain\Libs\App\VarProcessor;
 use ZnLib\Components\ShellRobot\Domain\Repositories\Shell\PackageShell;
 
 class InstallLinuxPackageTask extends BaseShell implements TaskInterface
@@ -18,9 +18,9 @@ class InstallLinuxPackageTask extends BaseShell implements TaskInterface
     public function getTitle(): ?string
     {
         if (is_array($this->package)) {
-            $package = implode(', ', VarProcessor::processList($this->package));
+            $package = implode(', ', ShellFactory::getVarProcessor()->processList($this->package));
         } else {
-            $package = VarProcessor::process($this->package);
+            $package = ShellFactory::getVarProcessor()->process($this->package);
         }
         return "Install packages \"{$package}\"";
     }
@@ -32,9 +32,9 @@ class InstallLinuxPackageTask extends BaseShell implements TaskInterface
             $packageShell->update();
         }
         if (is_array($this->package)) {
-            $packageShell->installBatch(VarProcessor::processList($this->package));
+            $packageShell->installBatch(ShellFactory::getVarProcessor()->processList($this->package));
         } else {
-            $packageShell->install(VarProcessor::process($this->package));
+            $packageShell->install(ShellFactory::getVarProcessor()->process($this->package));
         }
     }
 }

@@ -29,10 +29,9 @@ class FileSystemShell extends BaseShellDriver
         return $this->shell->runCommandRaw($commandString);
     }
 
-
     public function uploadContent(string $content, string $destination)
     {
-        $dir = TempHelper::getTmpDirectory('deployer_upload');
+        $dir = TempHelper::getTmpDirectory('shellRobot');
         $file = basename($destination);
         $fileName = $dir . '/' . $file;
         FileStorageHelper::save($fileName, $content);
@@ -41,7 +40,7 @@ class FileSystemShell extends BaseShellDriver
 
     public function downloadContent(string $source): string
     {
-        $dir = TempHelper::getTmpDirectory('deployer_upload');
+        $dir = TempHelper::getTmpDirectory('shellRobot');
         $file = basename($source);
         $fileName = $dir . '/' . $file;
         $this->downloadFile($source, $fileName);
