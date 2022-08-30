@@ -30,14 +30,7 @@ class ShellFactory
         return ContainerHelper::getContainer()->get(ConnectionProcessor::class);
     }
 
-    public static function createTask($definition, IO $io): TaskInterface
-    {
-        $remoteShell = ShellFactory::createRemoteShell();
-        return InstanceHelper::create($definition, [
-            BaseShellNew::class => $remoteShell,
-            IO::class => $io,
-        ]);
-    }
+
 
     public static function createRemoteShell(?string $connectionName = null): RemoteShell
     {

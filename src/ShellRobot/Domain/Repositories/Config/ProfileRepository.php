@@ -2,19 +2,35 @@
 
 namespace ZnLib\Components\ShellRobot\Domain\Repositories\Config;
 
+use ZnCore\Collection\Interfaces\Enumerable;
+use ZnCore\Collection\Libs\Collection;
+use ZnDomain\Query\Entities\Query;
 use ZnLib\Components\ShellRobot\Domain\Factories\ShellFactory;
 
 class ProfileRepository
 {
 
-    public static function findOneByName(string $projectName)
+    public function findOneByName(string $projectName)
     {
-        $profiles = self::findAll();
+//        $collection = $this->findAll();
+//        $query = new Query();
+//        $query->where('title', $projectName);
+//        $profiles = FilterHelper::filterByQuery($profiles, $query);
+//        dd($profiles, $projectName);
+
+        $profiles = $this->getItems();
         $profileConfig = $profiles[$projectName];
         return $profileConfig;
     }
 
-    public static function findAll()
+    public function findAll(Query $query = null): Enumerable
+    {
+        $new = $this->getItems();
+        return new Collection($new);
+//        return $new;
+    }
+
+    private function getItems(): array
     {
         $profiles = ShellFactory::getConfigProcessor()->get('profiles');
         $new = [];

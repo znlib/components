@@ -7,12 +7,12 @@ use ZnCore\Bundle\Base\BaseBundle;
 class Bundle extends BaseBundle
 {
 
-    /*public function console(): array
+    public function console(): array
     {
         return [
             'ZnLib\Components\ShellRobot\Commands',
         ];
-    }*/
+    }
 
     public function container(): array
     {
