@@ -2,6 +2,7 @@
 
 namespace ZnLib\Components\ShellRobot\Domain\Libs\App;
 
+use ZnCore\Container\Helpers\ContainerHelper;
 use ZnCore\Instance\Helpers\InstanceHelper;
 use ZnCore\Pattern\Singleton\SingletonTrait;
 use ZnCore\Text\Helpers\TemplateHelper;
@@ -22,6 +23,7 @@ class TaskProcessor
             $title = $taskInstance->getTitle();
             if ($title) {
                 $title = TemplateHelper::render($title, $taskDefinition, '{{', '}}');
+                $title = ShellFactory::getVarProcessor()->process($title);
                 $io->writeln($title);
             }
             $taskInstance->run();
@@ -31,9 +33,11 @@ class TaskProcessor
     private static function createTask($definition, IO $io): TaskInterface
     {
         $remoteShell = ShellFactory::createRemoteShell();
-        return InstanceHelper::create($definition, [
+        $constructParams = [
             BaseShellNew::class => $remoteShell,
             IO::class => $io,
-        ]);
+        ];
+        $container = ContainerHelper::getContainer();
+        return InstanceHelper::create($definition, $constructParams, $container);
     }
 }

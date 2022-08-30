@@ -1,14 +1,12 @@
 <?php
 
-namespace ZnLib\Components\ShellRobot\Domain\Libs\App;
+namespace ZnLib\Components\ShellRobot\Domain\Repositories\File;
 
 use ZnCore\Arr\Helpers\ArrayHelper;
-use ZnCore\Code\Helpers\DeprecateHelper;
 use ZnCore\Text\Helpers\TemplateHelper;
+use ZnLib\Components\ShellRobot\Domain\Interfaces\Repositories\VarRepositoryInterface;
 
-DeprecateHelper::hardThrow();
-
-class VarProcessor
+class VarRepository implements VarRepositoryInterface
 {
 
     private $vars;

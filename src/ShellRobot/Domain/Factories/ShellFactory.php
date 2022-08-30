@@ -3,33 +3,28 @@
 namespace ZnLib\Components\ShellRobot\Domain\Factories;
 
 use ZnCore\Container\Helpers\ContainerHelper;
-use ZnCore\Instance\Helpers\InstanceHelper;
-use ZnLib\Components\ShellRobot\Domain\Interfaces\TaskInterface;
-use ZnLib\Components\ShellRobot\Domain\Libs\App\ConfigProcessor;
-use ZnLib\Components\ShellRobot\Domain\Libs\App\ConnectionProcessor;
-use ZnLib\Components\ShellRobot\Domain\Libs\App\VarProcessor;
+use ZnLib\Components\ShellRobot\Domain\Interfaces\Services\ConfigServiceInterface;
+use ZnLib\Components\ShellRobot\Domain\Interfaces\Services\ConnectionServiceInterface;
+use ZnLib\Components\ShellRobot\Domain\Interfaces\Services\VarServiceInterface;
 use ZnLib\Components\ShellRobot\Domain\Libs\Shell\RemoteShell;
-use ZnLib\Console\Domain\Base\BaseShellNew;
-use ZnLib\Console\Domain\Libs\IO;
 
 class ShellFactory
 {
 
-    public static function getVarProcessor(): VarProcessor
+    public static function getVarProcessor(): VarServiceInterface
     {
-        return ContainerHelper::getContainer()->get(VarProcessor::class);
+        return ContainerHelper::getContainer()->get(VarServiceInterface::class);
     }
 
-    public static function getConfigProcessor(): ConfigProcessor
+    public static function getConfigProcessor(): ConfigServiceInterface
     {
-        return ContainerHelper::getContainer()->get(ConfigProcessor::class);
+        return ContainerHelper::getContainer()->get(ConfigServiceInterface::class);
     }
 
-    public static function getConnectionProcessor(): ConnectionProcessor
+    public static function getConnectionProcessor(): ConnectionServiceInterface
     {
-        return ContainerHelper::getContainer()->get(ConnectionProcessor::class);
+        return ContainerHelper::getContainer()->get(ConnectionServiceInterface::class);
     }
-
 
 
     public static function createRemoteShell(?string $connectionName = null): RemoteShell

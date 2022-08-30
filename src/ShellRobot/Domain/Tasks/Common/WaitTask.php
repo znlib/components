@@ -16,6 +16,13 @@ class WaitTask extends BaseShell implements TaskInterface
         if(empty($this->seconds)) {
             throw new \Exception('');
         }
-        sleep($this->seconds);
+        $seconds = $this->seconds;
+        $this->io->write('   ');
+        while ($seconds >= 0) {
+            $this->io->write('.');
+            sleep(1);
+            $seconds--;
+        }
+        $this->io->writeln('');
     }
 }

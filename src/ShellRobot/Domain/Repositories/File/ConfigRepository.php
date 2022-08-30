@@ -1,14 +1,12 @@
 <?php
 
-namespace ZnLib\Components\ShellRobot\Domain\Libs\App;
+namespace ZnLib\Components\ShellRobot\Domain\Repositories\File;
 
 use ZnCore\Arr\Helpers\ArrayHelper;
-use ZnCore\Code\Helpers\DeprecateHelper;
 use ZnLib\Components\ShellRobot\Domain\Factories\ShellFactory;
+use ZnLib\Components\ShellRobot\Domain\Interfaces\Repositories\ConfigRepositoryInterface;
 
-DeprecateHelper::hardThrow();
-
-class ConfigProcessor
+class ConfigRepository implements ConfigRepositoryInterface
 {
 
     private $config;

@@ -2,14 +2,11 @@
 
 namespace ZnLib\Components\ShellRobot\Commands;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use ZnCore\Arr\Helpers\ArrayHelper;
-use ZnCore\Collection\Helpers\CollectionHelper;
-use ZnCore\Collection\Libs\Collection;
 use ZnLib\Components\ShellRobot\Domain\Services\ProfileService;
 use ZnLib\Components\ShellRobot\Domain\Services\TaskService;
 use ZnLib\Console\Domain\Libs\IO;

@@ -1,15 +1,13 @@
 <?php
 
-namespace ZnLib\Components\ShellRobot\Domain\Libs\App;
+namespace ZnLib\Components\ShellRobot\Domain\Repositories\File;
 
-use ZnCore\Code\Helpers\DeprecateHelper;
 use ZnLib\Components\ShellRobot\Domain\Entities\HostEntity;
 use ZnLib\Components\ShellRobot\Domain\Enums\VarEnum;
 use ZnLib\Components\ShellRobot\Domain\Factories\ShellFactory;
+use ZnLib\Components\ShellRobot\Domain\Interfaces\Repositories\ConnectionRepositoryInterface;
 
-DeprecateHelper::hardThrow();
-
-class ConnectionProcessor
+class ConnectionRepository implements ConnectionRepositoryInterface
 {
 
 //    private $currentConnection = 'default';
