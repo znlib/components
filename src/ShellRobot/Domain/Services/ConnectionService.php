@@ -46,7 +46,6 @@ class ConnectionService extends BaseService implements ConnectionServiceInterfac
         return $this->getRepository()->getCurrent();
     }*/
 
-
     public function getCurrent()
     {
         $connectionName = $this->getCurrentConnectionName();
@@ -57,6 +56,4 @@ class ConnectionService extends BaseService implements ConnectionServiceInterfac
     {
         return ShellFactory::getVarProcessor()->get(VarEnum::CURRENT_CONNECTION, self::DEFAULT_CONNECTION_NAME);
     }
-
 }
-
