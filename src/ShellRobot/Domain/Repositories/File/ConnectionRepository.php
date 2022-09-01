@@ -10,13 +10,11 @@ use ZnLib\Components\ShellRobot\Domain\Interfaces\Repositories\ConnectionReposit
 class ConnectionRepository implements ConnectionRepositoryInterface
 {
 
-//    private $currentConnection = 'default';
-
-    const DEFAULT_CONNECTION_NAME = 'default';
+//    const DEFAULT_CONNECTION_NAME = 'default';
 
     public function get(?string $connectionName = null)
     {
-        $connectionName = $connectionName ?: $this->getCurrentConnectionName();
+//        $connectionName = $connectionName ?: $this->getCurrentConnectionName();
         $connection = ShellFactory::getConfigProcessor()->get("connections.$connectionName");
         return $connection;
     }
@@ -28,12 +26,7 @@ class ConnectionRepository implements ConnectionRepositoryInterface
         return $hostEntity;
     }
 
-    /*public function switchCurrentConnection(string $connectionName)
-    {
-        $this->currentConnection = $connectionName;
-    }*/
-
-    public function getCurrent()
+    /*public function getCurrent()
     {
         $connectionName = $this->getCurrentConnectionName();
         return $this->get($connectionName);
@@ -42,7 +35,7 @@ class ConnectionRepository implements ConnectionRepositoryInterface
     private function getCurrentConnectionName()
     {
         return ShellFactory::getVarProcessor()->get(VarEnum::CURRENT_CONNECTION, self::DEFAULT_CONNECTION_NAME);
-    }
+    }*/
 
     private function createEntity(array $connection): HostEntity
     {
